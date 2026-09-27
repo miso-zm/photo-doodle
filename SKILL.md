@@ -1,11 +1,11 @@
 ---
 name: photo-doodle
-description: Transform an uploaded real-life photo into a sparse, slightly naive hand-drawn daily line illustration while preserving the actual people, pets, objects, clothing, pose, and relationships. Use for portrait, outfit, person-and-pet, indoor-life, outdoor-travel, or still-life photo redraws; do not replace subjects with a fixed IP character or apply a photo filter.
+description: Transform a real-life photo, primarily portraits, outfits, full-body poses, or people with pets, into a sparse hand-drawn daily line illustration. Preserve the photographed person's identity cues, hairstyle, expression, clothing, pose, and relationships. Also supports scenes and still life when requested; do not substitute a fixed IP character or apply a photo filter.
 ---
 
 # Photo to Daily Line Illustration
 
-Reconstruct the photograph as an illustration. Preserve the photographed reality, but edit the visual information aggressively.
+Reconstruct the photograph as an illustration, primarily for photos of people. Preserve the photographed reality, but edit the visual information aggressively.
 
 This is an independent visual language. Do not invoke Miso, Oro, or any fixed character system. Do not borrow their proportions, palettes, expressions, or assets.
 
