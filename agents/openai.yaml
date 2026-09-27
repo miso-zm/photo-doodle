@@ -1,4 +1,4 @@
 interface:
-  display_name: "日常照片线描转绘"
+  display_name: "Photo Doodle"
   short_description: "将真实照片重构为极简、稚拙、留白充足的日常手绘线描插画"
-  default_prompt: "请把我上传的真实照片转绘成极简日常线描插画，保留主体身份、动作和关系。"
+  default_prompt: "请使用 $photo-doodle 把我上传的照片转绘成极简日常手绘插画，保留主体身份、动作和关系。"

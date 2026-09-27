@@ -4,13 +4,13 @@ A Codex skill for turning everyday photos into sparse hand-drawn line illustrati
 
 ## Install
 
-Clone this repository into your Codex skills directory as `photo-to-daily-line-illustration`:
+Clone this repository into your Codex skills directory as `photo-doodle`:
 
 ```sh
-git clone https://github.com/miso-zm/daily-line.git ~/.codex/skills/photo-to-daily-line-illustration
+git clone https://github.com/miso-zm/photo-doodle.git ~/.codex/skills/photo-doodle
 ```
 
-Then ask Codex to use `photo-to-daily-line-illustration` with an uploaded photo. The skill uses the available image-generation tool and the included style anchors.
+Then ask Codex to use `photo-doodle` with an uploaded photo. The skill uses the available image-generation tool and the included style anchors.
 
 ## What's included
 
