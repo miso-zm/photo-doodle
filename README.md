@@ -1,22 +1,57 @@
-# Daily Line
+# Photo Doodle｜照片转日常手绘插画
 
-A Codex skill for turning everyday photos into sparse hand-drawn line illustrations. It preserves the photographed people, pets, clothing, poses, relationships, and recognizable colors while simplifying the background and details.
+一个用于 Codex 的照片转绘 Skill。它把真实照片重构为留白充足、线条略带手绘起伏、局部平涂的日常插画，同时保留照片里真正重要的人物、物品、动作和关系。
 
-## Install
+## 转绘对比
 
-Clone this repository into your Codex skills directory as `photo-doodle`:
+| 示例照片（生成素材） | 使用 Photo Doodle 转绘 |
+| :---: | :---: |
+| <img src="examples/still-life-before.png" alt="原图：杯子放在三本书上，右后方有玻璃瓶" width="360"> | <img src="examples/still-life-after.png" alt="转绘：保留杯子、三本书和玻璃瓶，简化背景与材质" width="360"> |
+
+这组示例保留了杯子把手、三本书的叠放顺序和右后方的玻璃瓶；删去了墙面光影、桌面纹理、陶瓷颗粒和玻璃反光。原图是为说明用法而生成的示例照片，不是用户的真实照片。
+
+## 安装
+
+把仓库克隆到 Codex 的 Skills 目录：
 
 ```sh
 git clone https://github.com/miso-zm/photo-doodle.git ~/.codex/skills/photo-doodle
 ```
 
-Then ask Codex to use `photo-doodle` with an uploaded photo. The skill uses the available image-generation tool and the included style anchors.
+如果你的电脑上已经有 `~/.codex/skills/photo-doodle`，无需再次克隆。重新打开 Codex 任务后即可使用 `$photo-doodle`。
 
-## What's included
+## 具体用法
 
-- `SKILL.md`: workflow, visual rules, and prompt skeleton.
-- `references/`: detailed style rules, photo-type guidance, and quality checks.
-- `assets/`: four style anchors for overall composition, full-body color, line weight, and face/line/fill simplification.
-- `agents/openai.yaml`: display metadata.
+1. 在 Codex 对话中上传一张照片。人物肖像、穿搭、人与宠物、室内日常、旅行场景和静物都可以。
+2. 在同一条消息里调用 Skill，并说清楚哪些特征必须保留。例如：
 
-The public package uses the included generated anchors. Two external inspiration images used during development are not redistributed because their publication rights have not been established.
+   ```text
+   请使用 $photo-doodle 转绘这张照片。保留人物的姿势、发型和衣服颜色；背景只留下能说明场景的少量线条。
+   ```
+
+3. Codex 会把照片作为内容依据，读取本仓库的风格基准图进行转绘，再检查主体、线条、脸部简化和色块是否符合规则。你可以针对一个具体问题继续提出修改，例如“保留原来的挑染位置”或“线条再自然一点”。
+
+静物也可以直接这样说：
+
+```text
+请使用 $photo-doodle 转绘这张照片。保留杯子、三本书和玻璃瓶的相对位置，删掉墙面光影和桌面纹理。
+```
+
+生成结果会随图像工具和输入照片而变化；上方对比图展示的是一次具体示例。
+
+## 风格要点
+
+- 以原照片为准，保留主体身份、姿势、互动和有辨识度的颜色；不替换成固定 IP 角色。
+- 用中等偏轻的黑色手绘线条、简化的五官、清晰的发型色块和充足留白表达画面。
+- 黑色块保持完整；彩色色块保持平静，不加入彩铅、水彩、马克笔条带或颗粒滤镜。
+- 背景只保留一到三个解释空间关系的线索，不描摹照片的每个细节。
+
+## 文件说明
+
+- `SKILL.md`：转绘流程、视觉规则和提示词框架。
+- `references/`：风格细则、不同照片类型的简化方法和结果检查清单。
+- `assets/`：整体风格、全身配色、线条粗细以及五官与色块的基准图。
+- `examples/`：本 README 使用的示例照片与转绘结果。
+- `agents/openai.yaml`：Codex 中显示的 Skill 信息。
+
+公开版没有收录开发过程中参考的两张外部插画，因为其公开转载权限尚未确认。
